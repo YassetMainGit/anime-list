@@ -1,0 +1,158 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Arial Black";
+}
+
+.topbar{
+  background:#e00000;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:10px;
+}
+
+.logo{
+  text-decoration: none;
+  color: black;
+  background:white;
+  padding:10px 20px;
+  font-weight:bold;
+  border-radius:10px;
+}
+
+.topbar input{
+  padding:6px;
+  width: 500px;
+}
+
+.icons{
+  margin-left:auto;
+  display:flex;
+  gap:10px;
+}
+
+.circle{
+  background:white;
+  width:40px;
+  height:40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+}
+
+.categories{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:10px;
+}
+
+.categories button{
+  background:white;
+  padding:5px 20px;
+}
+
+.layout{
+  display:flex;
+}
+
+.ads{
+  width:350px;
+  padding:20px;
+  margin-left: 50px;
+}
+
+.ads img{
+  width:100%;
+}
+
+.products{
+  flex:1;
+  padding:20px;
+  padding-right: 100px;
+  padding-left: 100px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.card{
+  background:#e00000;
+  border-radius: 5px;
+  padding: 5px;
+  position:relative;
+}
+
+.rating{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:white;
+  padding:3px 6px;
+}
+
+.card img{
+  width:100%;
+  height: 300px;
+}
+
+.bottom{
+  background:white;
+  margin-top:10px;
+  padding:5px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.price{
+  font-weight:bold;
+  margin-right: 5px;
+}
+
+.like{
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.m200 {
+  width: 350px;
+  position: fixed;
+  padding: 30px;
+  padding-top: 450px;
+}
+.m200 img{
+  width: 100%;
+}
+
+.image-container{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.image-container button{
+  position:absolute;
+  background:white;
+  border:none;
+  cursor:pointer;
+  padding:5px;
+}
+
+.image-container button:first-child{
+  left:5px;
+}
+
+.image-container button:last-child{
+  right:5px;
+}
+
+.image-container img{
+  width:100%;
+}

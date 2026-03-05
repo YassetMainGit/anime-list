@@ -1,12 +1,73 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { PRODUCTS } from './data/products';
+import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('online-store');
+  nextImage(product: any){
+    if(product.currentImage < product.images.length - 1){
+      product.currentImage++;
+    } else {
+      product.currentImage = 0;
+    }
+  }
+
+  prevImage(product: any){
+    if(product.currentImage > 0){
+      product.currentImage--;
+    } else {
+      product.currentImage = product.images.length - 1;
+    }
+  }
+  products: Product[] = PRODUCTS;
+  filteredProducts: Product[] = PRODUCTS;
+
+  searchText = '';
+  selectedCategory = '';
+
+  like(p: Product){
+    p.likes++;
+  }
+
+  filterCategory(category: string){
+    this.selectedCategory = category;
+    this.applyFilters();
+  }
+  showAllProducts() {
+    this.selectedCategory = '';
+    this.searchText = '';
+    this.applyFilters();
+  }
+
+  search(){
+    this.applyFilters();
+  }
+
+  sortByLikes(){
+    this.filteredProducts = [...this.filteredProducts].sort((a,b)=> b.likes - a.likes);
+  }
+
+  sortByRating(){
+    this.filteredProducts = [...this.filteredProducts].sort((a,b)=> b.rating - a.rating);
+  }
+
+  sortByPrice(){
+    this.filteredProducts = [...this.filteredProducts].sort((a,b)=> a.price - b.price);
+  }
+
+  applyFilters(){
+    this.filteredProducts = this.products.filter(p =>
+      (this.selectedCategory === '' || p.category === this.selectedCategory) &&
+      p.name.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+  }
+
 }
