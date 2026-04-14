@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:online-store": "node dist/online-store/server/server.mjs"
+    "serve:ssr:online-store": "node dist/online-store/server/server.mjs",
+    "deploy": "ng build --base-href /online-store/ && npx angular-cli-ghpages --dir=dist/online-store/browser"
   },
   "prettier": {
     "printWidth": 100,
