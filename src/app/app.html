@@ -1,17 +1,12 @@
 <!-- TOP BAR -->
-
 <div class="topbar" style="height: 100px">
 
-  <a class="logo" (click)="showAllProducts()">Anime List by Asset</a>
+  <a class="logo sekuya-regular" (click)="showAllProducts()">Anime List by Asset</a>
   <div style="width: 200px"></div>
   <button (click)="sortByRating()">★</button>
 
   <input [(ngModel)]="searchText" placeholder="Поиск по названию" (keyup.enter)="search()">
   <button (click)="search()">🔍</button>
-
-  <div class="icons">
-    <a class="circle">👤</a>
-  </div>
 
 </div>
 
@@ -20,10 +15,10 @@
 
 <div class="categories">
 
-  <button (click)="filterCategory('men')">Онгоинг</button>
-  <button (click)="filterCategory('women')">Посмотрел</button>
-  <button (click)="filterCategory('kids')">Не досмотрел</button>
-  <button (click)="filterCategory('unisex')">Планирую посмотреть</button>
+  <button (click)="filterCategory('ongoing')">Онгоинг</button>
+  <button (click)="filterCategory('watched')">Посмотрел</button>
+  <button (click)="filterCategory('not-finished')">Не досмотрел</button>
+  <button (click)="filterCategory('planned')">Планирую посмотреть</button>
 
 </div>
 
@@ -53,12 +48,14 @@
         </a>
 
         <div class="bottom">
-
           <div class="name">{{product.name}}</div>
-
         </div>
 
       </div>
+
+      @if(product.showDivider){
+        <div class="divider"></div>
+      }
 
     }
 

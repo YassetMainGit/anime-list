@@ -33,10 +33,6 @@ export class App {
   searchText = '';
   selectedCategory = '';
 
-  like(p: Product){
-    p.likes++;
-  }
-
   filterCategory(category: string){
     this.selectedCategory = category;
     this.applyFilters();
@@ -51,16 +47,8 @@ export class App {
     this.applyFilters();
   }
 
-  sortByLikes(){
-    this.filteredProducts = [...this.filteredProducts].sort((a,b)=> b.likes - a.likes);
-  }
-
   sortByRating(){
     this.filteredProducts = [...this.filteredProducts].sort((a,b)=> b.rating - a.rating);
-  }
-
-  sortByPrice(){
-    this.filteredProducts = [...this.filteredProducts].sort((a,b)=> a.price - b.price);
   }
 
   applyFilters(){

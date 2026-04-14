@@ -3,8 +3,7 @@ export interface Product {
   name: string;
   image: string;
   rating: number;
-  price: number;
-  likes: number;
   link: string;
-  category: 'men' | 'women' | 'kids' | 'unisex';
+  category: 'ongoing' | 'watched' | 'not-finished' | 'planned';
+  showDivider: boolean;
 }
