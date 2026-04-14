@@ -3,7 +3,18 @@ import { Product } from "../models/product.model";
 export const PRODUCTS: Product[] = [
 
   {
-    id: 1,
+    id: 100,
+    name: "Термоноски Tespe 1 пара черный 39-43",
+    image: "https://resources.cdn-kaspi.kz/img/m/p/p73/p5e/6820806.jpg?format=gallery-medium",
+    rating: 4.8,
+    price: 720,
+    likes: 0,
+    category: "men",
+    link: "https://kaspi.kz/shop/p/termonoski-tespe-m-s-1-para-chernyi-39-43-128751848/?c=750000000"
+  },
+
+  {
+    id: 101,
     name: "Термоноски Tespe 1 пара черный 39-43",
     image: "https://resources.cdn-kaspi.kz/img/m/p/p73/p5e/6820806.jpg?format=gallery-medium",
     rating: 4.8,

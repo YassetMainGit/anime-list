@@ -1,19 +1,15 @@
 <!-- TOP BAR -->
 
-<div class="topbar">
+<div class="topbar" style="height: 100px">
 
-  <a class="logo" (click)="showAllProducts()">DISHMANSKI-SHOP</a>
+  <a class="logo" (click)="showAllProducts()">Anime List by Asset</a>
   <div style="width: 200px"></div>
-  <button (click)="sortByLikes()">❤</button>
   <button (click)="sortByRating()">★</button>
-  <button (click)="sortByPrice()">₸</button>
 
   <input [(ngModel)]="searchText" placeholder="Поиск по названию" (keyup.enter)="search()">
   <button (click)="search()">🔍</button>
 
   <div class="icons">
-    <a class="circle">❤</a>
-    <a class="circle">🛒</a>
     <a class="circle">👤</a>
   </div>
 
@@ -24,24 +20,15 @@
 
 <div class="categories">
 
-  <button (click)="filterCategory('men')">Мужская</button>
-  <button (click)="filterCategory('women')">Женская</button>
-  <button (click)="filterCategory('kids')">Мальчики</button>
-  <button (click)="filterCategory('unisex')">Девочки</button>
+  <button (click)="filterCategory('men')">Онгоинг</button>
+  <button (click)="filterCategory('women')">Посмотрел</button>
+  <button (click)="filterCategory('kids')">Не досмотрел</button>
+  <button (click)="filterCategory('unisex')">Планирую посмотреть</button>
 
 </div>
 
 
 <div class="layout">
-
-  <!-- ADS -->
-  <div class="m200">
-    <img src="https://avatars.mds.yandex.net/i?id=5d28aef3515ac63e3ce50008ef4b2c14616784a7-5210205-images-thumbs&n=13" alt="">
-  </div>
-  <div class="ads">
-    <img src="https://www.shutterstock.com/image-vector/vertical-web-banner-online-casino-600w-2731447915.jpg">
-  </div>
-
 
   <!-- PRODUCTS -->
 
@@ -55,7 +42,7 @@
 
     @for(product of filteredProducts; track product.id){
 
-      <div class="card">
+      <div class="card" [ngClass]="product.category">
 
         <div class="rating">
           ★ {{product.rating}}
@@ -68,12 +55,6 @@
         <div class="bottom">
 
           <div class="name">{{product.name}}</div>
-
-          <div class="price">{{product.price}}₸</div>
-
-          <button class="like" (click)="like(product)">
-            {{product.likes}} ❤
-          </button>
 
         </div>
 

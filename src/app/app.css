@@ -19,6 +19,7 @@ body{
   padding:10px 20px;
   font-weight:bold;
   border-radius:10px;
+  font-size:20px;
 }
 
 .topbar input{
@@ -49,6 +50,22 @@ body{
   padding:10px;
 }
 
+.card.men{
+  background: #ffeaa7; /* Онгоинг */
+}
+
+.card.women{
+  background: #55efc4; /* Посмотрел */
+}
+
+.card.kids{
+  background: #ff7675; /* Не досмотрел */
+}
+
+.card.unisex{
+  background: #74b9ff; /* Планирую */
+}
+
 .categories button{
   background:white;
   padding:5px 20px;
@@ -74,7 +91,7 @@ body{
   padding-right: 100px;
   padding-left: 100px;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(5,1fr);
   gap:20px;
   flex-wrap: wrap;
   align-items: flex-start;
